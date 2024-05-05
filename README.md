@@ -21,141 +21,136 @@
 
 ![images](osi-model-1.jpg)
 
-1, Tầng Vật lý (Physical Layer): Tầng vật lý đảm nhiệm việc truyền dữ liệu qua các phương tiện truyền thông vật lý như cáp, sóng radio, hoặc quang học. Nó xác định các đặc điểm về điện, cơ và chức năng của các giao diện vật lý và các thông số kỹ thuật của các thiết bị mạng.
+1, **Physical Layer**: The Physical Layer is responsible for transmitting data over physical communication media such as cables, radio waves, or optical fibers. It defines the electrical, mechanical, and functional characteristics of physical interfaces and the technical specifications of network devices.
 
-2, Tầng Liên kết dữ liệu (Data Link Layer): Tầng liên kết dữ liệu kiểm soát việc truyền dữ liệu giữa các thiết bị trên cùng một đường truyền vật lý. Nó chia dữ liệu thành các khung (frames) và xác định địa chỉ vật lý (MAC address) để định danh các thiết bị trong mạng.
+2, **Data Link Layer**: The Data Link Layer controls the transmission of data between devices on the same physical link. It divides data into frames and determines the physical addresses (MAC addresses) to identify devices in the network.
 
-3, Tầng Mạng (Network Layer): Tầng mạng quản lý việc định tuyến (routing) và chuyển tiếp (forwarding) dữ liệu qua các mạng khác nhau. Nó sử dụng địa chỉ logic (địa chỉ IP) để xác định đích của các gói tin và điều khiển việc truyền dữ liệu giữa các mạng con.
+3, **Network Layer**: The Network Layer manages routing and forwarding of data across different networks. It uses logical addresses (IP addresses) to determine the destination of packets and controls the transmission of data between subnetworks.
 
-4, Tầng Giao vận (Transport Layer): Tầng giao vận cung cấp các dịch vụ truyền tải dữ liệu tin cậy và kiểm soát luồng dữ liệu. Nó chia dữ liệu thành các đoạn (segments) và đảm bảo rằng các đoạn này được chuyển đến đúng đích và theo đúng thứ tự.
+4, **Transport Layer**: The Transport Layer provides reliable data transmission services and flow control. It divides data into segments and ensures that these segments are delivered to the correct destination in the correct order.
 
-5, Tầng Phiên (Session Layer): Tầng phiên thiết lập, duy trì và đóng các phiên giao tiếp (sessions) giữa các ứng dụng trên các thiết bị khác nhau. Nó quản lý việc bắt đầu, kết thúc và đồng bộ hóa các phiên giao tiếp.
+5, **Session Layer**: The Session Layer establishes, maintains, and terminates communication sessions between applications on different devices. It manages the initiation, termination, and synchronization of communication sessions.
 
-6, Tầng Trình diễn (Presentation Layer): Tầng trình diễn chịu trách nhiệm cho việc định dạng, mã hóa và nén dữ liệu để đảm bảo tính toàn vẹn và tương thích giữa các hệ thống khác nhau. Nó xử lý các vấn đề như mã hóa, nén, mã hóa và định dạng dữ liệu.
+6, **Presentation Layer**: The Presentation Layer is responsible for data formatting, encoding, and compression to ensure integrity and compatibility between different systems. It deals with issues such as data encryption, compression, encoding, and data formatting.
 
-7, Tầng Ứng dụng (Application Layer): Tầng ứng dụng cung cấp các dịch vụ trực tiếp cho người dùng cuối. Nó chứa các giao thức và ứng dụng như HTTP (truyền tải siêu văn bản), SMTP (gửi thư điện tử) và FTP (truyền tải tập tin).
+7, **Application Layer**: The Application Layer provides direct services to end users. It contains protocols and applications such as HTTP (Hypertext Transfer Protocol) for web browsing, SMTP (Simple Mail Transfer Protocol) for sending emails, and FTP (File Transfer Protocol) for file transfer.
 
 ## 2. DoD Four-layers Model
 
-Mô hình DoD (tcp/ip) chỉ có bốn tầng, xấp xỉ ánh xạ tầng truy cập mạng của nó với tầng 1 và 2 của mô hình OSI (Vật lý và Liên kết dữ liệu), tầng internet (IP) của nó với tầng mạng của OSI, tầng máy chủ-đến-máy chủ (tcp, udp) của nó với tầng 4 của OSI (giao vận) và tầng ứng dụng của nó với tầng 5, 6 và 7 của OSI.
+The DoD (or tcp/ip) model has only four layers, roughly mapping its network access layer to OSI layers 1 and 2 (Physical and Datalink), its internet (IP) layer to the OSI network layer, its host-to-host (tcp, udp) layer to OSI layer 4 (transport) and its application layer to OSI layers 5, 6 and 7.
 
 ![Physical layer](dod_layers.png)
 
-1, Network Access Layer: Chịu trách nhiệm vận chuyển dữ liệu qua phương tiện vật lý cụ thể đang sử dụng. Các giao thức khác nhau được chọn từ tầng này, tùy thuộc vào loại mạng vật lý được sử dụng.
+1, **Network Access Layer**: Responsible for transporting data through the specific physical media being used. Different protocols are chosen from this layer depending on the type of physical network being used.
 
-2, Internet Layer: Chịu trách nhiệm vận chuyển dữ liệu qua loạt các mạng vật lý khác nhau kết nối giữa máy nguồn và máy đích. Giao thức định tuyến (routing protocols) liên quan chặt chẽ nhất với tầng này, cũng như Giao thức IP (IP Protocol), giao thức cơ bản của Internet.
+2, **Internet Layer**: Responsible for transporting data across a series of different physical networks connecting the source and destination machines. Routing protocols are closely associated with this layer, as well as the IP Protocol, which is the fundamental protocol of the Internet.
 
-3, Host-to-Host Layer: Xử lý việc tiếp hẹn kết nối, kiểm soát luồng dữ liệu, truyền lại dữ liệu bị mất và các quản lý dòng dữ liệu tổng quát khác. Hai giao thức TCP và UDP, mỗi giao thức đóng vai trò quan trọng nhất tại tầng này.
+3, **Host-to-Host Layer**: Handles connection establishment, flow control, retransmission of lost data, and other general data stream management. Two important protocols at this layer are TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
 
-4, Process Layer: chứa các giao thức thực hiện các chức năng cấp người dùng, chẳng hạn như gửi thư điện tử, truyền tải tập tin và đăng nhập từ xa.
+4, **Process Layer**: Contains protocols that perform user-level functions, such as sending emails, file transfer, and remote login.
 
 
 ## 3. TCP/IP Model
 
-Mô hình TCP/IP, tương tự mô hình OSI, có một tập hợp các tầng. Mô hình OSI có bảy tầng và mô hình TCP/IP có bốn tầng.
+The TCP/IP model,similar to the OSI model, has a set of layers.The OSI has seven layers and TCP/IP model has four layers.
 
-Mô hình TCP/IP và mô hình OSI được tạo ra độc lập. Mô hình TCP/IP đại diện cho thực tế trong thế giới thực, trong khi mô hình OSI đại diện cho một tưởng tượng lý tưởng.
+The OSI model and the TCP/Ip models were both created independently.The TCP/IP network model represents reality in the world whereas the OSI model represents an ideal.
 
 ![Physical layer](tcp_ip_0.png)
 
-1, Tầng Ứng dụng (Application Layer):
+1, Application Layer:
 
-- Xác định giao thức ứng dụng TCP/IP và cách các chương trình máy chủ tương tác với dịch vụ tầng vận chuyển để sử dụng mạng.
-- Các giao thức: HTTP, FTP, SMTP, DNS.
+- Defines TCP/IP application protocols and how host programs interface with transport layer services to use the network.
+- Protocols : HTTP, FTP,SMTP, DNS
 
 
-2, Tầng Vận chuyển (Transport Layer):
+2, Transport Layer:
 
-- Cung cấp quản lý phiên giao tiếp giữa các nút/máy tính. Xác định mức dịch vụ và trạng thái của kết nối được sử dụng khi vận chuyển dữ liệu.
-- Các giao thức: TCP, UDP, RTP.
+- Provides communication session management between the nodes/computers.Defines the level of service and states of the connection used when transporting data.
+- Protocols: TCP, UDP,RTP
 
-3, Tầng Internet (Internet Layer):
+3, Internet Layer:
 
-- Đóng gói dữ liệu thành các gói tin IP chứa thông tin địa chỉ nguồn và đích được sử dụng để chuyển tiếp các gói tin giữa máy chủ và mạng. Thực hiện việc định tuyến các gói tin IP.
-- Các giao thức: IP, ICMP, ARP, RARP.
+- Packages Data into IP datagrams which contains source and destination address information that is used to forward the datagrams between host and networks.Performs routing of Ip datagrams.
+- Protocols: IP,ICMP,ARP,RARP
 
-4, Tầng Truy cập Mạng (Network Access Layer):
+4, Network Access Layer:
 
-- Chỉ định chi tiết về cách dữ liệu được gửi vật lý qua mạng, bao gồm cách các bit được truyền tín hiệu điện tử bởi các thiết bị phần cứng.
-- Các giao thức: Ethernet, Frame Relay, RS-2.
+- Specifies details of how data is physically sent through the network,including how bits are electronically signaled by hardware devices.
+- Protocols: Ethernet,Frame relays,RS-2
 
   ![Physical layer](tcp_ip_1.gif)
 
 
 ## 4. IP Addresses
 
-### 4.1 Khái niệm
+### 4.1 Concepts
 
-Mỗi thiết bị kết nối với internet có một định danh duy nhất. Hầu hết các mạng hiện nay, bao gồm tất cả các máy tính trên internet, sử dụng giao thức TCP/IP như một tiêu chuẩn để giao tiếp trên mạng. Trong giao thức TCP/IP, định danh duy nhất là Địa chỉ IP. Hai loại Địa chỉ IP là IPv4 và IPv6.
+Each device connected to the internet has a unique identifier. Most networks today, including all computers on the internet, use the TCP/IP as a standard to communicate on the network. In the TCP/IP protocol, this unique identifier is the IP Address. The two kinds of IP Addresses are IPv4 and IPv6.
 
-Các phần tám bit này được gọi là **octet**. Ví dụ **IP Address** sau đó trở thành **11000000.10101000.01111011.10000100**. Số này chỉ hợp lý hơn một chút, cho nên trong hầu hết các trường hợp, chuyển đổi địa chỉ nhị phân thành định dạng thập phân dotted-decimal (192.168.123.132). Các số thập phân được ngăn cách bởi dấu chấm là các **octet** được chuyển đổi từ hệ số nhị phân sang hệ thập phân.
+These eight bit sections are known as octets. The example IP address, then, becomes **11000000.10101000.01111011.10000100**. This number only makes a little more sense, so for most uses, convert the binary address into dotted-decimal format **(192.168.123.132)**. The decimal numbers separated by periods are the octets converted from binary to decimal notation.
 
-Đối với mạng TCP/IP (WAN), để hoạt động hiệu quả như một tập hợp các networ, các bộ định tuyến chuyển tiếp gói dữ liệu giữa các network không biết chính xác vị trí của một máy chủ mà thông tin package được gửi đến. Các bộ định tuyến chỉ biết máy chủ thuộc mạng nào và sử dụng thông tin được lưu trữ trong bảng định tuyến của chúng để xác định cách đưa gói tin đến mạng đích của máy chủ đích. Sau khi gói tin được chuyển đến mạng đích, gói tin được chuyển đến máy chủ thích hợp.
+For a TCP/IP wide area network (WAN) to work efficiently as a collection of networks, the routers that pass packets of data between networks do not know the exact location of a host for which a packet of information is destined. Routers only know what network the host is a member of and use information stored in their route table to determine how to get the packet to the destination host's network. After the packet is delivered to the destination's network, the packet is delivered to the appropriate host.
 
-### 4.2 IPv4 so với IPv6
+### 4.2 IPv4 vs IPv6
 
-- IPv4 sử dụng 32 bit nhị phân để tạo ra một địa chỉ duy nhất trên mạng. Một địa chỉ IPv4 được biểu diễn bằng bốn số được ngăn cách bởi dấu chấm. Mỗi số là biểu diễn thập phân (hệ cơ số 10) cho một số nhị phân (hệ cơ số 2) gồm tám chữ số, còn được gọi là octet.
+IPv4 uses 32 binary bits to create a single unique address on the network. An IPv4 address is expressed by four numbers separated by dots. Each number is the decimal (base-10) representation for an eight-digit binary (base-2) number, also called an octet.
 
   <img src="ipv4.png" style="background:white"/>
 
-- IPv6 sử dụng 128 bit nhị phân để tạo ra một địa chỉ duy nhất trên mạng. Một địa chỉ IPv6 được biểu diễn bằng tám nhóm số thập lục phân (hệ cơ số 16) được ngăn cách bởi dấu hai chấm. Các nhóm số chứa toàn số không thường được bỏ qua để tiết kiệm không gian, chỉ còn lại dấu hai chấm để đánh dấu khoảng trống.
+IPv6 uses 128 binary bits to create a single unique address on the network. An IPv6 address is expressed by eight groups of hexadecimal (base-16) numbers separated by colons. Groups of numbers that contain all zeros are often omitted to save space, leaving a colon separator to mark the gap.
 
   <img src="ipv6.png" style="background:white" />
 
 
 ### 4.3 IP Classes
 
-Thông thường, IPv4 cho phép chúng ta có các địa chỉ từ 0.0.0.0 đến 255.255.255.255. Tuy nhiên, một số số trong khoảng đó được dành riêng cho mục đích cụ thể trên các mạng TCP/IP. Những sự dành riêng này được công nhận bởi cơ quan quản lý địa chỉ TCP/IP, Tổ chức Định danh Số Internet (IANA). Bốn sự dành riêng cụ thể bao gồm:
+Typically, the IPv4 space allows us to have addresses between 0.0.0.0 to 255.255.255.255. However, some numbers in that range are reserved for specific purposes on TCP/IP networks. These reservations are recognized by the authority on TCP/IP addressing, the Internet Assigned Numbers Authority (IANA). Four specific reservations include the following
 
-- 0.0.0.0 - Đại diện cho mạng mặc định, là khái niệm trừu tượng về việc chỉ được kết nối với mạng TCP/IP.
+- 0.0.0.0 — This represents the default network, which is the abstract concept of just being connected to a TCP/IP network.
 
-- 255.255.255.255 - Địa chỉ network broadcasts, tức là các messages được gửi tới tất cả các máy tính trên network.
+- 255.255.255.255 — This address is reserved for network broadcasts, or messages that should go to all computers on the network.
 
-- 127.0.0.1 - Đây được gọi là loopback address, có nghĩa là cách máy tính xác định chính nó, dù có được gán địa chỉ IP hay không.
+- 127.0.0.1 — This is called the loopback address, meaning your computer’s way of identifying itself, whether or not it has an assigned IP address.
 
-- 169.254.0.1 đến 169.254.255.254 - Đây là phạm vi IP Address Automatic Private (APIPA) được gán tự động khi một máy tính không thành công trong việc nhận địa chỉ từ máy chủ DHCP.
+- 169.254.0.1 to 169.254.255.254 — This is the Automatic Private IP Addressing (APIPA) range of addresses assigned automatically when a computer’s unsuccessful getting an address from a DHCP server.
 
-Các địa chỉ IP khác được dành cho các lớp con mạng (subnet class). Một subnet là một mạng con, được kết nối với mạng lớn hơn thông qua một bộ định tuyến. Subnet có thể có hệ thống địa chỉ riêng để các máy tính trên cùng một subnet có thể giao tiếp nhanh chóng mà không cần gửi dữ liệu qua mạng lớn hơn. Một bộ định tuyến trên một mạng TCP/IP, bao gồm Internet, được cấu hình để nhận ra một hoặc nhiều subnet và điều hướng lưu lượng mạng một cách phù hợp. Dưới đây là các địa chỉ IP được dành riêng cho các subnet:
+The other IP address reservations are for subnet classes. A subnet is a smaller network of computers connected to a larger network through a router. The subnet can have its own address system so computers on the same subnet can communicate quickly without sending data across the larger network. A router on a TCP/IP network, including the Internet, is configured to recognize one or more subnets and route network traffic appropriately. The following are the IP addresses reserved for subnets:
 
-- 10.0.0.0 đến 10.255.255.255 - Nằm trong phạm vi địa chỉ Lớp A từ 1.0.0.0 đến 127.0.0.0, trong đó bit đầu tiên là 0.
+- 10.0.0.0 to 10.255.255.255 — This falls within the Class A address range of 1.0.0.0 to 127.0.0.0, in which the first bit is 0.
 
-- 172.16.0.0 đến 172.31.255.255 - Nằm trong phạm vi địa chỉ Lớp B từ 128.0.0.0 đến 191.255.0.0, trong đó hai bit đầu tiên là 10.
+- 172.16.0.0 to 172.31.255.255 — This falls within the Class B address range of 128.0.0.0 to 191.255.0.0, in which the first two bits are 10.
 
-- 192.168.0.0 đến 192.168.255.255 - Nằm trong phạm vi Lớp C từ 192.0.0.0 đến 223.255.255.0, trong đó ba bit đầu tiên là 110.
+- 192.168.0.0 to 192.168.255.255 — This falls within the Class C range of 192.0.0.0 through 223.255.255.0, in which the first three bits are 110.
 
-- Multicast (trước đây được gọi là Lớp D) - Bốn bit đầu tiên trong địa chỉ là 1110, với địa chỉ nằm trong khoảng từ 224.0.0.0 đến 239.255.255.255.
+- Multicast (formerly called Class D) — The first four bits in the address are 1110, with addresses ranging from 224.0.0.0 to 239.255.255.255.
 
-- Dành cho future/experimental việc sử dụng (trước đây được gọi là Lớp E) - địa chỉ từ 240.0.0.0 đến 254.255.255.254.
+- Reserved for future/experimental use (formerly called Class E) — addresses 240.0.0.0 to 254.255.255.254.
+
+The first three (within Classes A, B and C) are those most used in creating subnets. Later, we’ll see how a subnet uses these addresses. The IANA has outlined specific uses for multicast addresses within Internet Engineering Task Force (IETF) document RFC 5771. However, it hasn’t designated a purpose or future plan for Class E addresses since it reserved the block in its 1989 document RFC 1112. Before IPv6, the Internet was filled with debate about whether the IANA should release Class E for general use.
 
 ### 4.4 Subnet mask
   
-Subnet mask là yêu cầu để TCP/IP hoạt động, là mặt nạ subnet (subnet mask). Subnet mask được sử dụng bởi giao thức TCP/IP để xác định xem một máy chủ có thuộc subnet cục bộ hay mạng từ xa.
+The second item, which is required for TCP/IP to work, is the subnet mask. The subnet mask is used by the TCP/IP protocol to determine whether a host is on the local subnet or on a remote network.
 
-Trong TCP/IP, các phần của địa chỉ IP được sử dụng làm địa chỉ mạng và địa chỉ máy chủ không cố định, vì vậy các địa chỉ mạng và địa chỉ máy chủ ở trên không thể xác định trừ khi có thêm thông tin. Thông tin này được cung cấp trong một số 32 bit khác gọi là subnet mask. Trong ví dụ này, subnet mask là **255.255.255.0**. Không rõ ý nghĩa của số này trừ khi biết rằng 255 trong hệ nhị phân tương đương với 11111111; vì vậy, subnet mask là **11111111.11111111.11111111.0000000**
+In TCP/IP, the parts of the IP address that are used as the network and host addresses are not fixed, so the network and host addresses above cannot be determined unless you have more information. This information is supplied in another 32-bit number called a subnet mask. In this example, the subnet mask is **255.255.255.0**. It is not obvious what this number means unless you know that 255 in binary notation equals 11111111; so, the subnet mask is: **11111111.11111111.11111111.0000000**
 
-Sắp xếp IP Address và subnet mask cùng nhau, phần mạng và phần máy chủ của địa chỉ có thể được tách ra:
+Lining up the IP address and the subnet mask together, the network and host portions of the address can be separated:
 
-- 11000000.10101000.01111011.10000100 - Địa chỉ IP (192.168.123.132)
+- **11000000.10101000.01111011.10000100** -- IP address **(192.168.123.132)**
 
-- 11111111.11111111.11111111.00000000 - Mặt nạ subnet (255.255.255.0)
+- **11111111.11111111.11111111.00000000** -- Subnet mask **(255.255.255.0)**
 
-24 bit đầu tiên (số bit 1 trong subnet mask) được xác định là địa chỉ network, với 8 bit cuối cùng (số bit 0 còn lại trong subnet mask) được xác định là địa chỉ máy chủ.
+The first 24 bits (the number of ones in the subnet mask) are identified as the network address, with the last 8 bits (the number of remaining zeros in the subnet mask) identified as the host address. This gives you the following:
 
-- 11000000.10101000.01111011.00000000 - Địa chỉ mạng (192.168.123.0)
+- 11000000.10101000.01111011.00000000 - Network address (192.168.123.0)
 
-- 00000000.00000000.00000000.10000100 - Địa chỉ máy chủ (000.000.000.132)
+- 00000000.00000000.00000000.10000100 - Host address (000.000.000.132)
  
 
-- 24 bit đầu tiên (số 1 trong subnet mask) được xác định là địa chỉ mạng, 8 bit cuối cùng (số số 0 còn lại trong mặt nạ mạng con) được xác định là địa chỉ máy chủ. Điều này cung cấp những điều sau đây:
+So now you know, for this example using a 255.255.255.0 subnet mask, that the network ID is 192.168.123.0, and the host address is 0.0.0.132. When a packet arrives on the 192.168.123.0 subnet (from the local subnet or a remote network), and it has a destination address of 192.168.123.132, your computer will receive it from the network and process it.
 
-- 11000000.10101000.01111011.00000000 -- Địa chỉ mạng (192.168.123.0)
-
-- 00000000.00000000.00000000.10000100 -- Địa chỉ máy chủ (000.000.000.132)
- 
-
-Cho ví dụ sử dụng subnet mask 255.255.255.0, ID network là 192.168.123.0 và địa chỉ máy chủ là 0.0.0.132. Khi một gói tin đến trên subnet 192.168.123.0 (từ subnet cục bộ hoặc mạng từ xa) và có địa chỉ đích là 192.168.123.132, máy tính sẽ nhận nó từ mạng và xử lý.
-
-Hầu hết các subnet mask thập phân chuyển đổi thành số nhị phân với tất cả các bit 1 bên trái và tất cả các bit 0 bên phải. Một số subnet mask phổ biến khác là:
+Almost all decimal subnet masks convert to binary numbers that are all ones on the left and all zeros on the right. Some other common subnet masks are:
 
 | Decimal          |  Binary                           |
 |------------------|-----------------------------------|
@@ -164,106 +159,102 @@ Hầu hết các subnet mask thập phân chuyển đổi thành số nhị phâ
 
 ### 4.5 Subnetting
     
-Một mạng TCP/IP class A, B hoặc C có thể được chia nhỏ hơn, hoặc subnetted, bởi một quản trị hệ thống. Điều này trở nên cần thiết khi cân nhắc về sơ đồ địa chỉ logic của Internet (thế giới trừu tượng của địa chỉ IP và các mạng con) với các mạng vật lý được sử dụng trong thực tế.
+A Class A, B, or C TCP/IP network can be further divided, or subnetted, by a system administrator. This becomes necessary as you reconcile the logical address scheme of the Internet (the abstract world of IP addresses and subnets) with the physical networks in use by the real world.
 
-Một quản trị hệ thống được phân bổ một khối địa chỉ IP có thể quản lý các mạng không được tổ chức một cách dễ dàng để phù hợp với các địa chỉ này. Ví dụ, có một mạng rộng với 150 máy chủ trên ba mạng (ở các thành phố khác nhau) được kết nối bằng một bộ định tuyến TCP/IP. Mỗi trong ba mạng này có 50 máy chủ. Được phân bổ mạng lớp C 192.168.123.0. (Để minh họa, địa chỉ này thực tế là từ một dải không được phân bổ trên Internet.) Điều này có nghĩa là có thể sử dụng các địa chỉ từ 192.168.123.1 đến 192.168.123.254 cho 150 máy chủ.
+A system administrator who is allocated a block of IP addresses may be administering networks that are not organized in a way that easily fits these addresses. For example, you have a wide area network with 150 hosts on three networks (in different cities) that are connected by a TCP/IP router. Each of these three networks has 50 hosts. You are allocated the class C network 192.168.123.0. (For illustration, this address is actually from a range that is not allocated on the Internet.) This means that you can use the addresses 192.168.123.1 to 192.168.123.254 for your 150 hosts.
 
-Hai địa chỉ không thể sử dụng trong ví dụ là 192.168.123.0 và 192.168.123.255 vì các địa chỉ nhị phân với phần máy chủ toàn bit 1 và toàn bit 0 là không hợp lệ. Địa chỉ 0 là không hợp lệ vì nó được sử dụng để chỉ định một mạng mà không chỉ định một máy chủ. Địa chỉ 255 (trong hệ nhị phân, một địa chỉ máy chủ toàn bit 1) được sử dụng để phát sóng một thông điệp đến tất cả các máy chủ trên một mạng. Hãy nhớ rằng địa chỉ đầu tiên và cuối cùng trong bất kỳ mạng hoặc mạng con nào cũng không thể được gán cho bất kỳ máy chủ riêng lẻ nào.
+Two addresses that cannot be used in your example are 192.168.123.0 and 192.168.123.255 because binary addresses with a host portion of all ones and all zeros are invalid. The zero address is invalid because it is used to specify a network without specifying a host. The 255 address (in binary notation, a host address of all ones) is used to broadcast a message to every host on a network. Just remember that the first and last address in any network or subnet cannot be assigned to any individual host.
 
-Bây giờ có thể gán địa chỉ IP cho 254 máy chủ. Điều này hoạt động tốt nếu tất cả 150 máy tính đều nằm trên một mạng duy nhất. Tuy nhiên, 150 máy tính nằm trên ba mạng vật lý riêng biệt. Thay vì yêu cầu thêm khối địa chỉ cho mỗi mạng, chia mạng của mình thành các mạng con cho phép sử dụng một khối địa chỉ trên nhiều mạng vật lý.
+You should now be able to give IP addresses to 254 hosts. This works fine if all 150 computers are on a single network. However, your 150 computers are on three separate physical networks. Instead of requesting more address blocks for each network, you divide your network into subnets that enable you to use one block of addresses on multiple physical networks.
 
-Trong trường hợp này, chia mạng của mình thành bốn mạng con bằng cách sử dụng một subnet mask làm cho địa chỉ mạng lớn hơn và phạm vi địa chỉ máy chủ có thể nhỏ hơn. Nói cách khác, "mượn" một số bit thường được sử dụng cho phần máy chủ và sử dụng chúng cho phần mạng của địa chỉ. Subnet mask 255.255.255.192 cho bốn network với 62 máy chủ. Điều này hoạt động vì trong hệ nhị phân, 255.255.255.192 tương đương với 1111111.11111111.1111111.11000000. Hai chữ số đầu của octet cuối trở thành các địa chỉ mạng, do đó có các network bổ sung 00000000 (0), 01000000 (64), 10000000 (128) và 11000000 (192). (Một số quản trị viên chỉ sử dụng hai trong số các mạng con này bằng cách sử dụng 255.255.255.192 như subnet mask.
+In this case, you divide your network into four subnets by using a subnet mask that makes the network address larger and the possible range of host addresses smaller. In other words, you are 'borrowing' some of the bits usually used for the host address, and using them for the network portion of the address. The subnet mask 255.255.255.192 gives you four networks of 62 hosts each. This works because in binary notation, 255.255.255.192 is the same as 1111111.11111111.1111111.11000000. The first two digits of the last octet become network addresses, so you get the additional networks 00000000 (0), 01000000 (64), 10000000 (128) and 11000000 (192). (Some administrators will only use two of the subnetworks using 255.255.255.192 as a subnet mask. For more information on this topic, see RFC 1878.) In these four networks, the last 6 binary digits can be used for host addresses.
 
-Sử dụng subnet mask 255.255.255.192, network 192.168.123.0 sau đó trở thành bốn network 192.168.123.0, 192.168.123.64, 192.168.123.128 và 192.168.123.192. Bốn network này sẽ có các địa chỉ máy chủ hợp lệ như sau:
+Using a subnet mask of 255.255.255.192, your 192.168.123.0 network then becomes the four networks 192.168.123.0, 192.168.123.64, 192.168.123.128 and 192.168.123.192. These four networks would have as valid host addresses:
 
 - 192.168.123.1-62
 - 192.168.123.65-126
 - 192.168.123.129-190
 - 192.168.123.193-254
 
-Hãy nhớ rằng, các địa chỉ máy chủ nhị phân với toàn bit 1 hoặc toàn bit 0 là không hợp lệ, vì vậy không thể sử dụng địa chỉ với octet cuối là 0, 63, 64, 127, 128, 191, 192 hoặc 255.
+Remember, again, that binary host addresses with all ones or all zeros are invalid, so you cannot use addresses with the last octet of 0, 63, 64, 127, 128, 191, 192, or 255.
 
-Có thể thấy cách điều này hoạt động bằng cách xem hai địa chỉ máy chủ, 192.168.123.71 và 192.168.123.133. 
-Nếu sử dụng subnet mask mặc định của lớp C là 255.255.255.0, cả hai địa chỉ đều thuộc mạng 192.168.123.0. 
-Tuy nhiên, nếu sử dụng subnet mask 255.255.255.192, chúng thuộc các mạng khác nhau; 192.168.123.71 thuộc mạng 192.168.123.64, 192.168.123.133 thuộc mạng 192.168.123.128.
+You can see how this works by looking at two host addresses, 192.168.123.71 and 192.168.123.133. If you used the default Class C subnet mask of 255.255.255.0, both addresses are on the 192.168.123.0 network. However, if you use the subnet mask of 255.255.255.192, they are on different networks; 192.168.123.71 is on the 192.168.123.64 network, 192.168.123.133 is on the 192.168.123.128 network.
 
 ### 4.6 Default gateways
 
-Khi một máy tính sử dụng TCP/IP cần giao tiếp với một máy chủ trên mạng khác, thông thường nó sẽ thông qua một thiết bị gọi là router. Trong thuật ngữ TCP/IP, một router được chỉ định trên một máy tính, kết nối mạng con của máy tính đến các mạng khác, được gọi là default gateway. Phần này giải thích cách TCP/IP xác định xem có gửi các gói tin tới default gateway hay không để đạt được máy tính hoặc thiết bị khác trên mạng.
+If a TCP/IP computer needs to communicate with a host on another network, it will usually communicate through a device called a router. In TCP/IP terms, a router that is specified on a host, which links the host's subnet to other networks, is called a default gateway. This section explains how TCP/IP determines whether or not to send packets to its default gateway to reach another computer or device on the network.
 
-Khi một máy tính cố gắng giao tiếp với một thiết bị khác sử dụng TCP/IP, nó thực hiện quá trình so sánh sử dụng subnet mask đã xác định và địa chỉ IP đích so với subnet mask và địa chỉ IP của chính nó. Kết quả của quá trình so sánh này cho biết cho máy tính biết liệu đích là một máy chủ cục bộ hay một máy chủ từ xa.
+When a host attempts to communicate with another device using TCP/IP, it performs a comparison process using the defined subnet mask and the destination IP address versus the subnet mask and its own IP address. The result of this comparison tells the computer whether the destination is a local host or a remote host.
 
-Nếu kết quả của quá trình này xác định đích là một máy chủ cục bộ, máy tính sẽ đơn giản gửi gói tin trên mạng con cục bộ. Nếu kết quả của so sánh xác định đích là một máy chủ từ xa, máy tính sẽ chuyển tiếp gói tin tới default gateway đã được xác định trong các thuộc tính TCP/IP của nó. Sau đó, router sẽ chịu trách nhiệm chuyển tiếp gói tin tới mạng con đúng.
-
+If the result of this process determines the destination to be a local host, then the computer will simply send the packet on the local subnet. If the result of the comparison determines the destination to be a remote host, then the computer will forward the packet to the default gateway defined in its TCP/IP properties. It is then the responsibility of the router to forward the packet to the correct subnet.
 
 ## 5. DNS:
 
-### 5.1 Khái niệm
+### 5.1 Concepts:
 
-Domain Name System (DNS) là một hệ thống phân phối giúp chuyển đổi tên miền dễ hiểu cho con người, ví dụ như **www.dyn.com**, thành địa chỉ IP dễ đọc cho máy tính, chẳng hạn như 50.16.85.103. DNS cũng là một hệ thống chứa thông tin quan trọng về tên miền, chẳng hạn như máy chủ email (MX records) và xác minh gửi (DKIM, SPF, DMARC), xác minh bản quyền domain qua bản ghi record TXT, và thậm chí là các fingerprints SSH (SSHFP).
+The Domain Name System (DNS) is a distributed directory that resolves human-readable hostnames, such as www.dyn.com, into machine-readable IP addresses like 50.16.85.103. DNS is also a directory of crucial information about domain names, such as email servers (MX records) and sending verification (DKIM, SPF, DMARC), TXT record verification of domain ownership, and even SSH fingerprints (SSHFP).
 
-Mỗi thiết bị kết nối với Internet đều có một địa chỉ IP duy nhất, các máy khác sử dụng địa chỉ này để tìm thiết bị. Các máy chủ DNS loại bỏ nhu cầu cho con người phải ghi nhớ các địa chỉ IP như 192.168.1.1 (trong IPv4) hoặc các địa chỉ IP chữ số và chữ cái phức tạp hơn như **2400:cb00:2048:1::c629:d7a2** (trong IPv6).
+Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
 
-### 5.2 Làm thế nào DNS hoạt động?
+### 5.2 How does DNS work?
 
-Quá trình giải quyết DNS liên quan đến chuyển đổi một tên miền như **www.example.com** thành một địa chỉ IP dễ sử dụng cho máy tính (như 192.168.1.1). Mỗi thiết bị trên Internet đều có một địa chỉ IP, và địa chỉ đó là cần thiết để tìm thiết bị Internet phù hợp tương tự như cách địa chỉ public được sử dụng để tìm một ngôi nhà cụ thể. Khi người dùng muốn download một trang web, cần có quá trình chuyển đổi giữa những gì người dùng gõ vào trình duyệt web (example.com) và địa chỉ sử dụng cho máy tính để tìm trang web example.com.
+The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
 
-Để hiểu quá trình đằng sau việc giải quyết DNS, quan trọng để tìm hiểu về các thành phần phần cứng khác nhau mà một truy vấn DNS phải đi qua. Đối với trình duyệt web, việc tra cứu DNS xảy ra "anonymous" và không đòi hỏi sự tương tác từ máy tính của người dùng ngoại trừ yêu cầu ban đầu.
+In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs “ behind the scenes” and requires no interaction from the user’s computer apart from the initial request.
 
-### 5.3 DNS liên quan đến việc tải một trang web
+### 5.3 There are 4 DNS servers involved in loading a webpage
 
-DNS recursor - Có thể được coi như một người quản lý thư được yêu cầu tìm một cuốn sách cụ thể nào đó trong thư viện. Máy chủ DNS recursor được thiết kế để nhận các truy vấn từ các máy khách thông qua các ứng dụng như trình duyệt web. Thông thường, máy chủ recursor sau đó chịu trách nhiệm thực hiện các yêu cầu bổ sung để đáp ứng truy vấn DNS của máy khách.
+DNS recursor - The recursor can be thought of as a librarian who is asked to go find a particular book somewhere in a library. The DNS recursor is a server designed to receive queries from client machines through applications such as web browsers. Typically the recursor is then responsible for making additional requests in order to satisfy the client’s DNS query.
 
-Máy chủ gốc (root nameserver) - Máy chủ gốc là bước đầu tiên trong quá trình chuyển đổi (giải quyết) tên máy chủ dễ đọc thành địa chỉ IP. Nó có thể được coi như một chỉ mục trong thư viện chỉ định đến các giá kệ sách cụ thể khác, thông thường nó phục vụ như một tham chiếu đến các vị trí cụ thể hơn.
+Root nameserver - The root server is the first step in translating (resolving) human readable host names into IP addresses. It can be thought of like an index in a library that points to different racks of books - typically it serves as a reference to other more specific locations.
 
-Máy chủ top-level domain (TLD) - Máy chủ top-level domain có thể được coi như một giá kệ sách cụ thể trong thư viện. Máy chủ này là bước tiếp theo trong việc tìm kiếm một địa chỉ IP cụ thể và nó lưu trữ phần cuối cùng của tên miền (Ví dụ: trong example.com, máy chủ TLD là "com").
+TLD nameserver - The top level domain server (TLD) can be thought of as a specific rack of books in a library. This nameserver is the next step in the search for a specific IP address, and it hosts the last portion of a hostname (In example.com, the TLD server is “com”).
 
-Máy chủ quyền xác định (authoritative nameserver) - Máy chủ cuối cùng này có thể được coi như từ điển trên một giá kệ sách, trong đó một tên cụ thể có thể được chuyển đổi thành định nghĩa của nó. Máy chủ quyền xác định là điểm cuối cùng trong truy vấn máy chủ tên. Nếu máy chủ tên quyền có quyền truy cập vào bản ghi được yêu cầu, nó sẽ trả về địa chỉ IP cho tên miền được yêu cầu trở lại cho máy chủ DNS recursor (thủ thư) đã tạo yêu cầu ban đầu.
+Authoritative nameserver - This final nameserver can be thought of as a dictionary on a rack of books, in which a specific name can be translated into its definition. The authoritative nameserver is the last stop in the nameserver query. If the authoritative name server has access to the requested record, it will return the IP address for the requested hostname back to the DNS Recursor (the librarian) that made the initial request.
 
 ### 5.4 DNS Records
 
-- A record: Là bản ghi host, chứa địa chỉ IPv4 của một máy tính. Khi một khách hàng DNS truy vấn một máy chủ DNS để tìm một bản ghi A, máy chủ DNS sẽ chuyển đổi tên máy chủ trong truy vấn thành địa chỉ IP. Một bản ghi AAAA tương tự nhưng chứa một địa chỉ IPv6 thay vì IPv4.
+**A record**: The A record, which is also called a host record contains the ipv4-address of a computer.When a DNS client queries a DNS server for an A record, then the DNS server will resolve the hostname in the query to an ip address. An AAAA record is similar but contains an ipv6 address instead of ipv4.
 
-- PTR record: Ngược lại của bản ghi A. Nó chứa tên của một máy tính và có thể được sử dụng để chuyển đổi địa chỉ IP thành tên máy chủ.
- 
-- NS record: Bản ghi nameserver là một bản ghi chỉ đến một máy chủ tên DNS (trong vùng này). Có thể liệt kê tất cả các máy chủ tên cho vùng DNS của bạn trong các bản ghi NS riêng biệt.
- 
-- Glue A record: Một bản ghi A ánh xạ tên của một bản ghi NS đến một địa chỉ IP được gọi là bản ghi glue.
- 
-- SOA record: Bản ghi SOA của một vùng chứa thông tin meta về vùng chính nó. Nội dung của bản ghi SOA được giải thích chi tiết trong phần về truyền vùng. Mỗi vùng chỉ có một bản ghi SOA.
- 
-- CNAME record: Bản ghi CNAME ánh xạ một tên miền thành một tên miền khác, tạo hiệu quả một bí danh cho một tên miền hiện có. Tên của máy chủ thư thường được gán bí danh thành mail hoặc smtp, và tên của một máy chủ web được gán bí danh thành www.
- 
-- MX record: Bản ghi MX chỉ đến một máy chủ SMTP. Khi bạn gửi một email đến một tên miền khác, máy chủ thư của bạn sẽ cần bản ghi MX của máy chủ thư của tên miền đích.
+**PTR record**: A PTR record is the reverse of an A record. It contains the name of a computer and can be used to resolve an ip address to a hostname.
+
+**NS record**: A NS record or nameserver record is a record that points to a DNS name server (in this zone). You can list all your name servers for your DNS zone in distinct NS records.
+
+**glue A record**: An A record that maps the name of an NS record to an ip address is said to be a glue record.
+
+**SOA record**: The SOA record of a zone contains meta information about the zone itself. The contents of the SOA record is explained in detail in the section about zone transfers. There is exactly one SOA record for each zone.
+
+**CNAME record**: A CNAME record maps a hostname to a hostname, creating effectively an alias for an existing hostname. The name of the mail server is often aliased to mail or smtp, and the name of a web server to www.
+
+**MX record**: The MX record points to an smtp server. When you send an email to another domain, then your mail server will need the MX record of the target domain's mail server.
 
 
 ## 6. Proxy server
 
-HTTP proxy là gì và hoạt động như thế nào?
+What is an HTTP proxy and how does it work?
 
     |CLIENT   <--->   PROXY   <--->   SERVER |
     | (Browser)-------------------(Web Server)|
 
-Yêu cầu HTTP được gửi từ khách hàng tới cổng 8080 của máy chủ proxy. Máy chủ proxy sau đó tạo một yêu cầu HTTP mới tới trang đích. Tuỳ thuộc vào cấu hình, proxy thường thêm tiêu đề "**X-Forwarded-For**" vào yêu cầu HTTP. Các tệp nhật ký trên trang web đích sẽ hiển thị địa chỉ IP của proxy, nhưng có thể cấu hình hoặc không cấu hình để ghi lại địa chỉ "X-Forwarded-For".
+The HTTP request is sent from Client to port 8080 of the Proxy Server. The Proxy Server then originates a new HTTP request to the destination site. The proxy, depending on the configuration, will often add a "X-Forwarded-For" header to the HTTP request. The log files on the destination web site will show the proxy's IP address, but may or may not be configured to log the "X-Forwarded-For" address.
 
-Proxy server từng rất phổ biến trong quá khứ và vẫn tiếp tục tồn tại. Tuy nhiên, hầu hết các phần của máy chủ proxy đã được thay thế bằng NAT (Network Address Translation) hiện đã tích hợp sẵn trong các bộ định tuyến. Chúng ta vẫn sử dụng máy chủ proxy đôi khi cho mục đích rất cụ thể như cộng đồng hacking/bảo mật, chủ yếu để ẩn danh của bên kết nối.
+It was popular years ago, and they still stick around. However, the proxy server, most of the part has been replaced by NAT that is now build into routers. We still use proxy server every once in a while for very specific usage such as hacking/security communities, mostly to hide the id of the connection side.
 
-Bên trong (trong mạng nội bộ), máy chủ proxy có thể rất hữu ích cho việc lưu trữ tạm (caching proxy như Squid). Ví dụ, điều này có thể hữu ích khi nhiều máy tính trong mạng cố gắng cập nhật Windows, máy chủ proxy có thể lưu trữ tệp GB một lần cho tất cả và tiết kiệm băng thông.
-
+Internally (within a network), it can be very useful for caching proxy(Squid). For instance, this can be useful when lots of our network computers trying to do Windows Update, the proxy server can cache GBs of files once and for all, and saving bandwidth.
 
 ## 7. Routing Bridging và NAT
 
 ### 7.1 NAT
 
-Sự thúc đẩy đằng sau NAT hoặc Network Address Translation xuất phát từ sự gia tăng đáng kể về số lượng ứng dụng mạng và người dùng cùng với số lượng hạn chế của địa chỉ IPv4 public. 
+The motivation behind NAT or Network Address Translation comes from the continuously increasing number of network applications and users along with the limited pool of public IPv4 addresses.
 
-NAT cho phép các máy chủ trên mạng nội bộ truy cập vào mạng bên ngoài. NAT không chỉ giải quyết vấn đề thiếu địa chỉ IPv4 mà nó còn giải quyết các lỗ hổng bảo mật, vì NAT ngăn các thiết bị trên mạng bên ngoài trực tiếp giao tiếp với các máy chủ trên mạng nội bộ sử dụng địa chỉ riêng.
+NAT enables hosts on an internal network to access an external network. NAT not only solves the problem of IPv4 address shortage but it also solves security loopholes since NAT prevents devices on the external network from directly communicating with hosts on the internal network that use private addresses.
 
 ### 7.2 Private IP Addresses
 
-Trong khi địa chỉ IP công khai được sử dụng để giao tiếp trực tiếp trên internet và được quản lý và phân phối bởi các tổ chức chuyên dụng, địa chỉ IP riêng không được sử dụng để giao tiếp trực tiếp trên internet và có thể được sử dụng bởi bất kỳ ai một cách ngẫu nhiên trên mạng nội bộ. Vì vậy, một địa chỉ IP riêng có thể được gán cho nhiều máy tính miễn là chúng không thuộc cùng một mạng nội bộ.
+While public IP addresses are used for direct communication on the internet and are handled and distributed by dedicated organizations, private IP addresses are not used for direct communication on the internet and can be used by anyone randomly on an internal network. So a private IP address can be assigned to multiple machines as long as they don't belong to the same internal network.
 
-Địa chỉ IP riêng dành riêng
+Reserved private IP addresses
 
 ```
 Lớp A: 10.0.0.0 - 10.255.255.255
@@ -271,21 +262,22 @@ Lớp B: 172.16.0.0 - 172.31.255.255
 Lớp C: 192.168.0.0 - 192.168.255.255
 ```
 
-NAT thường được triển khai trên các thiết bị mạng ra mạng như các bộ định tuyến hay tường lửa. Mạng nội bộ có thể là một doanh nghiệp hoặc một gia đình. Vì vậy, khi sử dụng máy tính tại nhà và muốn truy cập internet để trò chuyện với bạn bè, một gói tin được gửi đến bộ định tuyến (home) nơi NAT được cấu hình. Đối với lưu lượng đi từ mạng nội bộ (home) đến mạng bên ngoài (internet), NAT sẽ dịch địa chỉ IP nguồn (riêng) của máy tính thành một địa chỉ IP public cụ thể để có thể giao tiếp với mạng public hoặc external. Và ngược lại, khi một traffic đi từ mạng bên ngoài đến mạng nội bộ, NAT sẽ dịch địa chỉ IP đích (public) thành một địa chỉ IP private cụ thể.
+NAT is usually implemented on network egress devices such as routers or firewalls. An internal network can be an entreprise or a home. So, when you are using your computer at home and you want to access the internet to chat with some friends, a packet is sent to your home router where there is a NAT configured. For a traffic coming from an internal network (home) and going to an external network (internet), the NAT will translate the source IP address (private) which is in this case your computer's, into a specific public IP address so you can communicate with the public or external network. And vice versa, when a traffic is coming from an external network and going to an internal network, the NAT will translate the destination IP address (public) into a specific private IP address.
 
 ### 7.3 Static NAT vs Dynamic NAT
 
-Khi một địa chỉ IP private được liên kết với một địa chỉ IP cố định, đây được gọi là NAT static vì đây là chế độ one-to-one. Trong khi ở NAT dynamic, địa chỉ IP private được ánh xạ tới một nhóm địa chỉ IP public. NAT static có thể dẫn đến địa chỉ IP không cần thiết, vì địa chỉ IP public luôn được dành riêng cho một máy chủ cụ thể cho dù chúng trực tuyến hay ngoại tuyến. Tuy nhiên, NAT dynamic tạm thời gán một địa chỉ IP ngẫu nhiên trong nhóm địa chỉ cho máy chủ. Khi không còn trực tuyến, NAT dynamic sẽ giải phóng địa chỉ IP đã được xác nhận trước đó và sau đó nó sẽ có sẵn cho những người dùng khác.
+When a private IP address is linked to a fixed IP address, this is called static NAT because it is one-to-one mode. Whereas in dynamic NAT, a private IP address is mapped to a group of public IP addresses. Static NAT could result in wasting IP addresses because the public IP address is always reserved for a specific host whether they are online or offline. However, dynamic NAT temporarily assigns a random IP address in the pool of addresses to the host. When the latter is no longer online, dynamic NAT frees that formerly claimed IP address and it is then available for other users.
 
 ### 7.4 NAPT và Easy IP
 
-Tuy vậy, dynamic NAT không hoàn hảo vì nó không xử lý việc trans số cổng. Đây là lúc NAPT hoặc Network Address and Port Translation (chuyển đổi Address và Số port network) đến support vì nó cho phép một địa chỉ IP public ánh xạ nhiều địa chỉ IP private thông qua các port. 
-Ở mode này, cả địa chỉ IP và số cổng của trans layer được dịch chuyển sao cho các địa chỉ riêng khác nhau với các số cổng source khác nhau được ánh xạ vào cùng một địa chỉ public với các số cổng source khác nhau.
+Despite that, dynamic NAT is far from perfect because it does not handle port numbers translation. This is where NAPT or Network Address and Port Translation comes to the rescue because it enables a public IP address to map multiple private IP addresses through ports. In this mode, both IP addresses and transport-layer ports are translated so that different private addresses with different source port numbers are mapped to the same public address with different source port numbers.
 
-Easy IP cũng trans cả IP Address và số port của layer-trans. Tuy nhiên, Easy IP áp dụng cho các tình huống trong đó địa chỉ IP public không cố định, ví dụ như các trong đó địa chỉ IP public được các thiết bị đầu ra trên mạng private thông qua DHCP (Dynamic Host Configuration Protoco).
+Easy IP also translates both IP addresses and transport-layer port numbers. However, Easy IP applies to scenarios where public IP addresses are not fixed, such as scenarios where public IP addresses are dynamically obtained by egress devices on private networks through DHCP (Dynamic Host Configuration Protocol) for example.
 
 ## 8. Firewalls và Ports
 
+- https://www.cloudflare.com/learning/network-layer/what-is-a-computer-port/
+- https://www.techtarget.com/searchnetworking/definition/port#:~:text=Firewalls%20take%20the%20port%20number,so%20they%20cannot%20be%20exploited.
 
 ## Reference 
 
@@ -299,4 +291,3 @@ Easy IP cũng trans cả IP Address và số port của layer-trans. Tuy nhiên,
 - [DNS: Why It’s Important and How It Works](https://dyn.com/blog/dns-why-its-important-how-it-works/)
 - [An Introduction to DNS Terminology, Components, and Concepts](https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts)
 - [Reviewing DNS Concepts](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/reviewing-dns-concepts)
-
